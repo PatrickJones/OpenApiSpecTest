@@ -52,6 +52,8 @@ namespace OpenApiSpecTest
             }
 
             app.UseCors("DefaultPolicy");
+
+            https://docs.microsoft.com/en-us/aspnet/core/fundamentals/static-files?view=aspnetcore-2.2#serve-files-outside-of-web-root
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions
             {
