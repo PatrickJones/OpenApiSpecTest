@@ -40,6 +40,7 @@ namespace OpenApiSpecTest
             services.AddSwaggerGen(d => { d.SwaggerDoc("V2", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Pet Shop 2 Azure Storage V2", Version = "2.0" }); });
             services.AddSwaggerGen(d => { d.SwaggerDoc("V3", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Pet Shop 3", Version = "3.0" }); });
             services.AddSwaggerGen(d => { d.SwaggerDoc("V4", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Pet Shop 4 Azure Blob", Version = "4.0" }); });
+            services.AddSwaggerGen(d => { d.SwaggerDoc("V5", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Pet Shop 5 Azure Blob", Version = "5.0" }); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,6 +71,7 @@ namespace OpenApiSpecTest
             app.UseSwaggerUI(s => { s.SwaggerEndpoint("https://apispecifications.z5.web.core.windows.net/PetApiSpecBlob", "Pet Shop v2"); });
             app.UseSwaggerUI(s => { s.SwaggerEndpoint("https://conferenceapi.azurewebsites.net/?format=json", "Pet Shop v3"); });
             app.UseSwaggerUI(s => { s.SwaggerEndpoint("https://testpetspec.blob.core.windows.net/%24web/PetApiSpecBlob", "Pet Shop v4"); });
+            app.UseSwaggerUI(s => { s.SwaggerEndpoint("https://testpetspec.blob.core.windows.net/$web/DailyAlmanacSpecBlob", "Pet Shop v5"); });
 
             app.UseEndpoints(endpoints =>
             {
